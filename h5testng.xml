@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name="Suite" parallel="false" thread-count="1">-->
+<suite name="Suite" parallel="false">
+    <!-- 监听，失败重试 -->
+    <listeners>
+        <listener class-name="com.wd.libarary.RetryListener"></listener>
+        <listener class-name="com.wd.libarary.ExtentReporterNG"></listener>
+        <!--<listener class-name="org.uncommons.reportng.HTMLReporter" />-->
+    </listeners>
+    <!-- verbose="2" 标识的就是记录的日志级别，共有0-10的级别，其中0表示无，10表示最详细 -->
+    <!-- 当preserve-order="true"是，可以保证节点下面的方法是按顺序执行的 -->
+    <test verbose="2" preserve-order="true" name="test">
+        <!--通过groups 来控制执行的模块,include本次执行模块,exclude排除的模块-->
+        <!--<groups>-->
+        <!--<run>-->
+        <!--<include name="testGroups01" />-->
+        <!--<exclude name="testGroups01" />-->
+        <!--</run>-->
+        <!--</groups>-->
+
+        <classes>
+            <class name="com.wd.h5.tests.LoginTest"/>
+            <!-- <class name="com.wd.h5.tests.myOrderTest" /> -->
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

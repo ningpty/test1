@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false" thread-count="1">
+	<!-- 监听，失败重试 -->
+	<listeners>
+		<listener class-name="com.wd.libarary.RetryListener"></listener>
+		<!--<listener class-name="org.uncommons.reportng.HTMLReporter" />-->
+	</listeners>
+	<!-- verbose="2" 标识的就是记录的日志级别，共有0-10的级别，其中0表示无，10表示最详细 -->
+	<!-- 当preserve-order="true"是，可以保证节点下面的方法是按顺序执行的 -->
+	<test verbose="1" preserve-order="true" name="TestDebug">
+		<!-- <parameter name="userName" value="13811952032" /> <parameter name="passWord" 
+			value="123456" /> -->
+		<classes>
+			<class name="com.wd.libarary.Before" />
+			<class name="com.wd.web.tests.CommodityManagementAddTest" />
+			<class name="com.wd.web.tests.CommodityManagementUICheckTest" />
+			<class name="com.wd.web.tests.CommodityManagementFunctionButtonTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
